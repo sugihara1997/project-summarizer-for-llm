@@ -16,6 +16,8 @@ def generate_tree(directory: str, prefix: str = "") -> str:
     tree = ""
     files = sorted(os.listdir(directory))
     for i, filename in enumerate(files):
+        if filename.startswith('.'):
+            continue
         path = os.path.join(directory, filename)
         if i == len(files) - 1:
             tree += f"{prefix}└── {filename}\n"
@@ -39,6 +41,7 @@ def summarize_directory(directory: str, output_dir: str):
     output_file.write(f"Directory Tree:\n{tree}\n")
 
     for root, dirs, files in os.walk(directory):
+        dirs[:] = [d for d in dirs if not d.startswith('.')]
         for file in files:
             file_path = os.path.join(root, file)
             if is_binary(file_path):
