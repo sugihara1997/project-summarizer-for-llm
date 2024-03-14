@@ -1,6 +1,7 @@
 # Project Summarizer for LLM
 
-This tool summarizes the contents of a directory, including its subdirectories and files, and outputs the summary to text files. These files are for uploading when asking large language models (LLMs) like ChatGPT or Claude for information about a project.
+This tool summarizes the contents of a directory, including its subdirectories and files, and outputs the summary to text files. These files are for uploading when asking large language models (LLMs) like Claude for information about a project.
+※ This tool is not support ChatGPT.
 
 ## Features
 
